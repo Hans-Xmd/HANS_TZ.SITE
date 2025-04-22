@@ -75,20 +75,17 @@ router.get('/', async (req, res) => {
                     const userJid = jidNormalizedUser(num + '@s.whatsapp.net');
                     await GlobalTechInc.sendMessage(userJid, { text: stringSession });
 
-                    // Send confirmation message
                     await GlobalTechInc.sendMessage(userJid, {
-  image: { url: 'https://api.github.com/repos/Mrhanstz/HansTz-Sever/contents/Database' },
-  caption:`
-┏━━『 *🚨 SESSION WARNING*』━━┓
- ━━━━━━━━━━━━━━━━━━
-┃🖐️┃       HELLO THERE!
-┃━━━━━━━━━━━━━━━━━━
-┃🔒┃NEVER SHARE YOUR SESSION ID!  
-┃━━━━━━━━━━━━━━━━━━
-┃🧾┃USE IT IN: \`SESSION_ID\` VAR
-┃━━━━━━━━━━━━━━━━━━
-┃🤖┃THANKS FOR USING VORTEX BOT
-┗━━━━━━━━━━━━━━━━━━┛`,
+  text:`
+> ━━『 *🚨 SESSION CONNECTED*』━━┓
+> 🖐️┃       HELLO THERE!
+> ━━━━━━━━━━━━━━━━━
+> 🔒┃NEVER SHARE YOUR SESSION ID!
+> ━━━━━━━━━━━━━━━━━
+> 🧾┃USE IT IN: SESSION_ID VAR
+> ━━━━━━━━━━━━━━━━━
+> 🤖┃  THANKS FOR USING  BOT
+ ━━━━━━━━━━━━━━━━━┛`,
   contextInfo: {
     forwardingScore: 5,
     isForwarded: true,
@@ -98,6 +95,7 @@ router.get('/', async (req, res) => {
     },
   }
 });
+
 
  // Clean up session after use
                     await delay(100);
